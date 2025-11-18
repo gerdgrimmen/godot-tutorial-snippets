@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxk16sseqr38v"]
+
+[ext_resource type="PackedScene" uid="uid://dirxoxy5j3ajq" path="res://character.tscn" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://rqkulmjkielk" path="res://level.gd" id="1_vonw3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vonw3")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_u52ul")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 190.0
+offset_top = 16.0
+offset_right = 254.0
+offset_bottom = 47.0
+text = "Hit it!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
